@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Clock, Lock, Unlock, Share2, MessageCircle, Calendar, Shield, Zap, Users, CheckCircle, ArrowRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -28,25 +27,45 @@ const LandingPage = () => {
       icon: Clock,
       title: "Time-Based Unlocking",
       description: "Schedule messages to unlock at precise moments in the future",
-      color: "from-orange-400 to-pink-400"
+      gradient: "from-orange-400 via-orange-500 to-orange-600",
+      mockup: {
+        title: "Morning Reminder",
+        subtitle: "Unlocks in 2 hours",
+        time: "8:00 AM"
+      }
     },
     {
       icon: Shield,
       title: "Privacy Controls",
       description: "Choose between private personal messages or public sharing",
-      color: "from-purple-400 to-blue-400"
+      gradient: "from-purple-400 via-purple-500 to-purple-600",
+      mockup: {
+        title: "Smart Tracking",
+        subtitle: "Track messages securely",
+        time: "Private Mode"
+      }
     },
     {
       icon: MessageCircle,
       title: "Future Self Messaging",
       description: "Send messages to your future self for motivation and reminders",
-      color: "from-green-400 to-teal-400"
+      gradient: "from-yellow-400 via-yellow-500 to-yellow-600",
+      mockup: {
+        title: "Personal Growth",
+        subtitle: "Messages tailored for you",
+        time: "Daily"
+      }
     },
     {
       icon: Share2,
       title: "Smart Sharing",
       description: "Share time-locked messages with friends, family, or the world",
-      color: "from-pink-400 to-purple-400"
+      gradient: "from-pink-400 via-pink-500 to-pink-600",
+      mockup: {
+        title: "Group Messages",
+        subtitle: "Share with loved ones",
+        time: "Family"
+      }
     }
   ];
 
@@ -265,21 +284,56 @@ const LandingPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
-                <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="w-8 h-8 text-white" />
+              <div key={index} className={`relative p-8 rounded-3xl bg-gradient-to-br ${feature.gradient} text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2`}>
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-10 rounded-3xl">
+                  <div className="absolute top-4 right-4 w-32 h-32 rounded-full bg-white/20"></div>
+                  <div className="absolute bottom-8 left-8 w-24 h-24 rounded-full bg-white/10"></div>
+                </div>
+                
+                {/* Content Container */}
+                <div className="relative z-10">
+                  {/* Header with Icon */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-3 bg-white/20 rounded-2xl backdrop-blur-sm">
+                      <feature.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-right">
+                      <div className="text-xs opacity-75">{feature.mockup.time}</div>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl font-semibold text-gray-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 text-center">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+
+                  {/* Mock Interface */}
+                  <div className="bg-white/95 rounded-2xl p-6 mb-6 text-gray-900">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center">
+                        <feature.icon className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-sm">{feature.mockup.title}</div>
+                        <div className="text-xs text-gray-500">{feature.mockup.subtitle}</div>
+                      </div>
+                      <div className="ml-auto">
+                        <ArrowRight className="w-4 h-4 text-gray-400" />
+                      </div>
+                    </div>
+                    <div className="flex space-x-2">
+                      <div className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium">Active</div>
+                      <div className="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">Scheduled</div>
+                    </div>
+                  </div>
+
+                  {/* Title and Description */}
+                  <div className="space-y-3">
+                    <h3 className="text-2xl font-bold text-white">{feature.title}</h3>
+                    <p className="text-white/90 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
