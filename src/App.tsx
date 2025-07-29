@@ -1,27 +1,45 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import HomePage from "@/components/LocalHost";
+import CapsulaLandingPage from "@/pages/Tc/Index";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
+import { useEffect } from "react";
+function TitleManager() {
+  const location = useLocation();
 
-const queryClient = new QueryClient();
+  useEffect(() => {
+    const path = location.pathname.toLowerCase();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+    if (path.startsWith("/fora")) {
+      document.title = "Forá:The Time Capsule";
+    } else {
+      document.title = "localhost";
+    }
+  }, [location.pathname]);
+
+  return null;
+}
+
+function App() {
+  return (
+    <>
+      <Router>
+        <TitleManager />
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/fora" element={<CapsulaLandingPage />} />
+          <Route path="/privacy-policy" element={<Privacy />} />
+          <Route path="/terms-and-conditions" element={<Terms />} />
+          {/* Add more routes as needed */}
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      </Router>
+    </>
+  );
+}
 
 export default App;

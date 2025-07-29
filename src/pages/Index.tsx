@@ -1,8 +1,7 @@
-
-import LandingPage from '@/components/LandingPage';
-
+import LandingPage from "@/components/LandingPage";
+import LocalHost from "@/components/LocalHost";
 const Index = () => {
-  return <LandingPage />;
+  return <LocalHost />;
 };
 
 export default Index;
