@@ -24,7 +24,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "Lakshwin Krishna Reddy M",
         image: "./Pictures/Untitled design (1).png",
         description:
-          "Currently pursuing an undergraduate degree in Computer Science and Engineering, with a primary focus on artificial intelligence and machine learning. Experienced in building data-driven systems using Python and modern ML frameworks, complemented by proficiency in full-stack application development with React and TypeScript. Founder of localhost, leading the end-to-end development of projects that explore time-based communication through applied machine learning and scalable software architecture.",
+          "Lakshwin is an emerging AI/ML developer and the founder of localhost, with hands-on experience in building intelligent, user-focused applications. Proficient in Python, JavaScript, React, Flask, and SQL, he has developed projects ranging from a power grid fault-detection chatbot using NLP to a sentiment analysis tool powered by spaCy and NLTK. He is also leading the creation of Forá, a time capsule messaging app that blends emotional storytelling with modern web technologies. Comfortable working with platforms like GitHub, Jupyter, VS Code, and Colab, he brings together strong technical skills and creative thinking. With a growing interest in LLM fine-tuning and a certification in relational databases, Lakshwin consistently seeks innovative ways to apply machine learning in real-world scenarios.",
         role: "Founder | Full-Stack Developer | AI Engineer",
         linkedin: "https://www.linkedin.com/in/lakshwinkrishna/",
         Acheivements: [
