@@ -22,7 +22,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 1,
         name: "Lakshwin Krishna Reddy M",
-        image: "./src/Pictures/Untitled design (1).png",
+        image: "./Pictures/Untitled design (1).png",
         description:
           "Currently pursuing an undergraduate degree in Computer Science and Engineering, with a primary focus on artificial intelligence and machine learning. Experienced in building data-driven systems using Python and modern ML frameworks, complemented by proficiency in full-stack application development with React and TypeScript. Founder of localhost, leading the end-to-end development of projects that explore time-based communication through applied machine learning and scalable software architecture.",
         role: "Founder | Full-Stack Developer | AI Engineer",
@@ -37,7 +37,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 2,
         name: "A Rohan",
-        image: "./src/Pictures/Untitled design.png",
+        image: "./Pictures/Untitled design.png",
         description:
           "Technically skilled individual with a strong foundation in Python, SQL, HTML, JavaScript, and Java. Experienced in tools such as PyCharm, Visual Studio Code, Jupyter Notebooks, and GitHub. Known for strong leadership, app and front-end development expertise, and active contribution to technical communities. Adept at organizing workshops, managing teams, and delivering real-world tech solutions through effective collaboration and innovation.",
         role: "Co-Founder | Mobile App Developer | UI/UX Designer",
@@ -52,7 +52,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 3,
         name: "S V Vishal",
-        image: "./src/Pictures/Untitled design (3).png",
+        image: "./Pictures/Untitled design (3).png",
         description:
           "An aspiring psychologist with a focus on research, clinical, and organizational psychology. Currently exploring lesser-known areas of the field through independent research. Serves as the Head of R&D and Innovation at localhost, leading studies on emerging psychological trends and behavioral insights. Interested in the intersection of mental health, workplace dynamics, and societal behavior. Driven by a commitment to make psychological knowledge more accessible and impactful.",
         role: "Co-Founder | Head of R&D and Innovation",
@@ -67,7 +67,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 4,
         name: "Abhimanyu Srinivasan",
-        image: "./src/Pictures/IMG_0538.jpg",
+        image: "./Pictures/IMG_0538.jpg",
         description:
           "Dedicated Chemical Engineer with a natural ability to organize, plan, and optimize operations. Combines technical knowledge with a systematic approach to ensure smooth workflows and consistent outcomes.",
         role: "Co-Founder | Head of Growth & Product Management",
@@ -81,7 +81,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 5,
         name: "Prathik E",
-        image: "./src/Pictures/IMG_0515 (2).png",
+        image: "./Pictures/IMG_0515 (2).png",
         description:
           "I am an ambitious and detail-oriented undergraduate student currently pursuing my degree in Computer Science, with a strong passion for technology and innovation. Alongside my academic journey, I actively contribute as both a Q/A Tester and an AI/ML Engineer, where my roles are vital in ensuring software quality and developing intelligent, data-driven solutions. My dual expertise allows me to bridge the gap between precision testing and smart automation, making me a valuable asset in building reliable and forward-thinking tech products.",
         role: "Head of Quality Assurance",
@@ -96,7 +96,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 6,
         name: "Dwaragesh",
-        image: "./src/Pictures/Untitled design (4) (1).png",
+        image: "./Pictures/Untitled design (4) (1).png",
         description:
           "Full Stack Developer with diverse interests and a dedicated team manager. Fosters growth and upbrings the greatest of the team in a positive environment. A freelance video editor who brings life to media and an experienced designer.",
         role: "Creative Media Producer | Developer",
@@ -110,7 +110,7 @@ const AnimatedTooltip: React.FC = () => {
       {
         id: 7,
         name: "Varnikka T M",
-        image: "./src/Pictures/IMG_0639.png",
+        image: "./Pictures/IMG_0639.png",
         description:
           "Varnikka T M  is a third-year undergraduate student pursuing a Bachelor of Engineering in Computer Science at BITS Pilani, Dubai Campus. She has a strong interest in digital marketing, content development, and IT-enabled communication strategies. As the current Vice President of SHADES, the university’s official art and design club, she leads strategic planning, event coordination, and branding initiatives for campus-wide creative events.Varnikka has interned at IDP Education UAE and Constellation, where she contributed to digital campaigns, video content strategy, and technical data projects. At IDP, she worked with the marketing and IT team to develop a structured YouTube content series and evaluate editing tools. At Constellation, she completed a technical internship focused on data analysis and project work using Jupyter Notebook.",
         role: "Head of Marketing",
