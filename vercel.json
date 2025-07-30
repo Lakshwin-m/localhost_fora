@@ -1,10 +1,12 @@
 {
-  "build": {
-    "env": {
-      "NPM_CONFIG_FORCE": "true"
+  "builds": [
+    {
+      "src": "vite.config.ts",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
     }
-  },
-  "installCommand": "npm install --force",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
+  ]
 }
