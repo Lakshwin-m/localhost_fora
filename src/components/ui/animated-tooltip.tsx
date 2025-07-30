@@ -112,7 +112,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "Varnikka T M",
         image: "./Pictures/IMG_0639.png",
         description:
-          "Varnikka T M  is a third-year undergraduate student pursuing a Bachelor of Engineering in Computer Science at BITS Pilani, Dubai Campus. She has a strong interest in digital marketing, content development, and IT-enabled communication strategies. As the current Vice President of SHADES, the university’s official art and design club, she leads strategic planning, event coordination, and branding initiatives for campus-wide creative events.Varnikka has interned at IDP Education UAE and Constellation, where she contributed to digital campaigns, video content strategy, and technical data projects. At IDP, she worked with the marketing and IT team to develop a structured YouTube content series and evaluate editing tools. At Constellation, she completed a technical internship focused on data analysis and project work using Jupyter Notebook.",
+          "Varnikka T M  is a third-year undergraduate student pursuing a Bachelor of Engineering in Computer Science at BITS Pilani, Dubai Campus. She has a strong interest in digital marketing, content development, and IT-enabled communication strategies. As the current Vice President of SHADES, the university's official art and design club, she leads strategic planning, event coordination, and branding initiatives for campus-wide creative events.Varnikka has interned at IDP Education UAE and Constellation, where she contributed to digital campaigns, video content strategy, and technical data projects. At IDP, she worked with the marketing and IT team to develop a structured YouTube content series and evaluate editing tools. At Constellation, she completed a technical internship focused on data analysis and project work using Jupyter Notebook.",
         role: "Head of Marketing",
         linkedin: "https://www.linkedin.com/in/alex-thompson/",
         Acheivements: [
@@ -155,14 +155,14 @@ const AnimatedTooltip: React.FC = () => {
       const isHovered = hoveredPerson?.id === person.id;
 
       let className =
-        "w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-4 border-white shadow-xl transition-all duration-200 ease-out relative ";
+        "w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-xl transition-all duration-200 ease-out relative ";
 
       if (isSelected) {
         className +=
-          "scale-125 ring-4 ring-blue-400/50 ring-offset-4 ring-offset-gray-900";
+          "scale-110 sm:scale-125 ring-2 sm:ring-4 ring-blue-400/50 ring-offset-2 sm:ring-offset-4 ring-offset-gray-900";
       } else if (isHovered) {
         className +=
-          "scale-110 ring-2 ring-white/30 ring-offset-2 ring-offset-gray-900";
+          "scale-105 sm:scale-110 ring-1 sm:ring-2 ring-white/30 ring-offset-1 sm:ring-offset-2 ring-offset-gray-900";
       } else {
         className += "hover:scale-105";
       }
@@ -170,7 +170,7 @@ const AnimatedTooltip: React.FC = () => {
       return {
         className,
         style: {
-          marginLeft: index > 0 ? "-20px" : "0",
+          marginLeft: index > 0 ? (window.innerWidth < 640 ? "-12px" : window.innerWidth < 768 ? "-16px" : "-20px") : "0",
           zIndex: isSelected ? 50 : people.length - index,
         },
       };
@@ -180,41 +180,41 @@ const AnimatedTooltip: React.FC = () => {
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden">
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-6 md:p-12">
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 md:p-8 lg:p-12">
         {/* Header */}
-        <div className="text-center mb-16 max-w-5xl">
-          <h1 className="text-6xl md:text-7xl font-extralight text-white mb-6 tracking-tight leading-tight">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-5xl px-2">
+          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-white mb-4 sm:mb-6 tracking-tight leading-tight">
             Meet the Team
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto font-light px-4">
             Meet the visionary leaders who drive innovation and shape the future
             of our organization
           </p>
         </div>
 
         {/* Team avatars */}
-        <div className="relative mb-12">
-          <div className="flex items-center justify-center">
+        <div className="relative mb-8 sm:mb-12 w-full max-w-6xl">
+          <div className="flex items-center justify-center flex-wrap sm:flex-nowrap gap-2 sm:gap-0 px-2">
             {people.map((person, index) => {
               const avatarStyles = getAvatarStyles(person, index);
 
               return (
                 <div
                   key={person.id}
-                  className="relative group cursor-pointer"
+                  className="relative group cursor-pointer flex-shrink-0"
                   onMouseEnter={() => handleMouseEnter(person)}
                   onMouseLeave={handleMouseLeave}
                   onClick={() => handlePersonClick(person)}
                   style={avatarStyles.style}
                 >
-                  {/* Optimized tooltip - simpler animation */}
+                  {/* Optimized tooltip - responsive positioning */}
                   {hoveredPerson?.id === person.id && !selectedPerson && (
-                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-8 z-50 opacity-0 animate-fade-in pointer-events-none">
-                      <div className="bg-white/95 backdrop-blur-sm border border-gray-300 text-black px-4 py-3 rounded-lg shadow-lg min-w-[220px] max-w-[320px]">
-                        <div className="font-medium text-sm md:text-base mb-1">
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 sm:mb-6 md:mb-8 z-50 opacity-0 animate-fade-in pointer-events-none">
+                      <div className="bg-white/95 backdrop-blur-sm border border-gray-300 text-black px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-lg min-w-[180px] sm:min-w-[220px] max-w-[280px] sm:max-w-[320px]">
+                        <div className="font-medium text-xs sm:text-sm md:text-base mb-1">
                           {person.name}
                         </div>
-                        <div className="text-xs md:text-sm text-gray-700 tracking-wide">
+                        <div className="text-xs sm:text-sm text-gray-700 tracking-wide">
                           {person.role}
                         </div>
                       </div>
@@ -240,19 +240,19 @@ const AnimatedTooltip: React.FC = () => {
           </div>
         </div>
 
-        {/* Selected Profile Panel - Optimized */}
+        {/* Selected Profile Panel - Fully responsive */}
         {selectedPerson && (
-          <div className="max-w-4xl w-full opacity-0 animate-fade-in-up">
+          <div className="max-w-4xl w-full opacity-0 animate-fade-in-up px-2 sm:px-4">
             <div className="bg-white/95 backdrop-blur-sm rounded-xl border border-gray-200 shadow-xl overflow-hidden">
               {/* Header */}
-              <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 px-6 py-5 md:px-8 md:py-6">
+              <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6">
                 <button
                   onClick={handleClosePanel}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors duration-150 p-2 rounded-full hover:bg-gray-700/50"
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-400 hover:text-white transition-colors duration-150 p-1.5 sm:p-2 rounded-full hover:bg-gray-700/50"
                   aria-label="Close profile panel"
                 >
                   <svg
-                    className="w-5 h-5"
+                    className="w-4 h-4 sm:w-5 sm:h-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -266,8 +266,8 @@ const AnimatedTooltip: React.FC = () => {
                   </svg>
                 </button>
 
-                <div className="flex items-center gap-6">
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden ring-2 ring-gray-600 shadow-lg">
+                <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 text-center sm:text-left">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden ring-2 ring-gray-600 shadow-lg flex-shrink-0">
                     <img
                       src={selectedPerson.image}
                       alt={selectedPerson.name}
@@ -276,11 +276,11 @@ const AnimatedTooltip: React.FC = () => {
                     />
                   </div>
 
-                  <div className="flex-1">
-                    <h2 className="text-2xl md:text-3xl font-light mb-2 tracking-tight text-white">
+                  <div className="flex-1 min-w-0">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-light mb-1 sm:mb-2 tracking-tight text-white break-words">
                       {selectedPerson.name}
                     </h2>
-                    <p className="text-yellow-400 text-base md:text-lg font-medium tracking-wide">
+                    <p className="text-yellow-400 text-sm sm:text-base md:text-lg font-medium tracking-wide break-words">
                       {selectedPerson.role}
                     </p>
                   </div>
@@ -288,9 +288,9 @@ const AnimatedTooltip: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="p-6 md:p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
+              <div className="p-4 sm:p-6 md:p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                  <div className="order-1">
                     <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 flex items-center">
                       <div className="w-3 h-0.5 bg-blue-500 mr-2" />
                       Executive Summary
@@ -300,7 +300,7 @@ const AnimatedTooltip: React.FC = () => {
                     </p>
                   </div>
 
-                  <div>
+                  <div className="order-2">
                     <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 flex items-center">
                       <div className="w-3 h-0.5 bg-green-500 mr-2" />
                       Key Achievements
@@ -313,7 +313,7 @@ const AnimatedTooltip: React.FC = () => {
                             className="flex items-start space-x-3"
                           >
                             <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0" />
-                            <p className="text-gray-700 text-sm leading-snug">
+                            <p className="text-gray-700 text-sm leading-snug break-words">
                               {achievement}
                             </p>
                           </div>
@@ -327,7 +327,7 @@ const AnimatedTooltip: React.FC = () => {
                           <div className="w-3 h-0.5 bg-yellow-500 mr-2" />
                           Contact Information
                         </h3>
-                        <p className="text-gray-800 text-sm md:text-base">
+                        <p className="text-gray-800 text-sm md:text-base break-all">
                           {selectedPerson.email}
                         </p>
                       </>
@@ -367,6 +367,19 @@ const AnimatedTooltip: React.FC = () => {
 
         .animate-fade-in-up {
           animation: fade-in-up 0.3s ease-out forwards;
+        }
+
+        @media (max-width: 475px) {
+          .xs\:w-20 {
+            width: 5rem;
+          }
+          .xs\:h-20 {
+            height: 5rem;
+          }
+          .xs\:text-4xl {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+          }
         }
       `}</style>
     </div>
