@@ -28,9 +28,9 @@ const AnimatedTooltip: React.FC = () => {
         role: "Founder | Full-Stack Developer | AI Engineer",
         linkedin: "https://www.linkedin.com/in/lakshwinkrishna/",
         Acheivements: [
-          "Developed Chrono, a time capsule app using React and TypeScript",
-          "Created Capsula, an AI-driven personal assistant",
-          "Contributed to open-source projects in the AI/ML space",
+          "Built an intelligent chatbot for solar inverter fault detection and power loss analysis using natural language processing techniques.",
+          "Founded localhost and leads the design and development of Forá, an innovative messaging app that lets users send messages to the future.",
+          "Designed and delivered a desktop sentiment analysis tool applying deep learning models to interpret and visualize movie review sentiments.",
         ],
         email: "lakshwinkrishna@gmail.com",
       },
