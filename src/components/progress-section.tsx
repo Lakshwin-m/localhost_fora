@@ -644,7 +644,7 @@ export default function Component() {
                 <div className="space-y-6 max-h-80 overflow-hidden">
                   <MessageBubble
                     sender="past"
-                    message="Hey… if you’re reading this, it means we finally did it. Forá is live. All those late nights, all the what-if's worth it.” ✨"
+                    message="Hey… if you’re reading this, it means we finally did it. Forá is live. All those late nights, all the what-if's worth it. ✨"
                     delay={isRightCardInView ? 1200 : 0}
                     isDelivered={true}
                     timestamp="From Jul 30, 2025"
