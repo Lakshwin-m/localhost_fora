@@ -57,38 +57,7 @@ function Footerdemo() {
           <div className="relative col-span-2 lg:col-span-1">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="mb-6 flex justify-center text-black space-x-4 lg:justify-start">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipContent>
-                    <p>Follow us on Facebook</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <a
-                      href="#"
-                      aria-label="Twitter"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        className="rounded-full text-black border-white hover:bg-white hover:text-black"
-                      >
-                        <Twitter className="h-4 w-4" />
-                      </Button>
-                    </a>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>Follow us on Twitter</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
+            
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
