@@ -39,7 +39,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "A Rohan",
         image: "./Pictures/Untitled design.png",
         description:
-          "Technically skilled individual with a strong foundation in Python, SQL, HTML, JavaScript, and Java. Experienced in tools such as PyCharm, Visual Studio Code, Jupyter Notebooks, and GitHub. Known for strong leadership, app and front-end development expertise, and active contribution to technical communities. Adept at organizing workshops, managing teams, and delivering real-world tech solutions through effective collaboration and innovation.",
+          "A Rohan is a technically skilled individual with a strong foundation in Python, SQL, HTML, JavaScript, and Java. He is experienced in tools such as PyCharm, Visual Studio Code, Jupyter Notebooks, and GitHub. Known for strong leadership, app development and front-end development expertise, and active contribution to technical communities. Adept at organizing workshops, managing teams, and delivering real-world tech solutions through effective collaboration and innovation.",
         role: "Co-Founder | Mobile App Developer | UI/UX Designer",
         linkedin: "https://www.linkedin.com/in/rohan-a/",
         Acheivements: [
@@ -54,7 +54,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "S V Vishal",
         image: "./Pictures/Untitled design (3).png",
         description:
-          "An aspiring psychologist with a focus on research, clinical, and organizational psychology. Currently exploring lesser-known areas of the field through independent research. Serves as the Head of R&D and Innovation at localhost, leading studies on emerging psychological trends and behavioral insights. Interested in the intersection of mental health, workplace dynamics, and societal behavior. Driven by a commitment to make psychological knowledge more accessible and impactful.",
+          "S V Vishal is an aspiring psychologist with a focus on research, clinical, and organizational psychology. He is currently exploring lesser-known areas of the field through independent research. He serves as the Head of R&D and Innovation at localhost, leading studies on emerging psychological trends and behavioral insights. Interested in the intersection of mental health, workplace dynamics, and societal behavior. Driven by a commitment to make psychological knowledge more accessible and impactful.",
         role: "Co-Founder | Head of R&D and Innovation",
         linkedin: "https://www.linkedin.com/in/david-kim/",
         Acheivements: [
@@ -69,7 +69,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "Abhimanyu Srinivasan",
         image: "./Pictures/IMG_0538.jpg",
         description:
-          "Dedicated Chemical Engineer with a natural ability to organize, plan, and optimize operations. Combines technical knowledge with a systematic approach to ensure smooth workflows and consistent outcomes.",
+          "Abhimanyu Srinivasan is a dedicated Chemical Engineer with a natural ability to organize, plan, and optimize operations. He combines technical knowledge with a systematic approach to ensure smooth workflows and consistent outcomes.",
         role: "Co-Founder | Head of Growth & Product Management",
         linkedin: "https://www.linkedin.com/in/alex-thompson/",
         Acheivements: [
@@ -83,7 +83,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "Prathik E",
         image: "./Pictures/IMG_0515 (2).png",
         description:
-          "I am an ambitious and detail-oriented undergraduate student currently pursuing my degree in Computer Science, with a strong passion for technology and innovation. Alongside my academic journey, I actively contribute as both a Q/A Tester and an AI/ML Engineer, where my roles are vital in ensuring software quality and developing intelligent, data-driven solutions. My dual expertise allows me to bridge the gap between precision testing and smart automation, making me a valuable asset in building reliable and forward-thinking tech products.",
+          "Prathik E is an ambitious and detail-oriented undergraduate student currently pursuing his degree in Computer Science, with a strong passion for technology and innovation. Alongside his academic journey, he actively contribute as both a Q/A Tester and an AI/ML Engineer, where his roles are vital in ensuring software quality and developing intelligent, data-driven solutions. His dual expertise allows him to bridge the gap between precision testing and smart automation, making him a valuable asset in building reliable and forward-thinking tech products.",
         role: "Head of Quality Assurance",
         linkedin: "https://www.linkedin.com/in/emily-rodriguez/",
         Acheivements: [
@@ -98,7 +98,7 @@ const AnimatedTooltip: React.FC = () => {
         name: "Dwaragesh",
         image: "./Pictures/Untitled design (4) (1).png",
         description:
-          "Full Stack Developer with diverse interests and a dedicated team manager. Fosters growth and upbrings the greatest of the team in a positive environment. A freelance video editor who brings life to media and an experienced designer.",
+          "Dwaragesh C is a full Stack Developer with diverse interests and is a dedicated team manager. He fosters growth and upbrings the greatest of the team in a positive environment. He is a freelance video editor who brings life to media and an experienced designer.",
         role: "Creative Media Producer | Developer",
         linkedin: "https://www.linkedin.com/in/lisa-wang/",
         Acheivements: [

@@ -8,7 +8,7 @@ export const BouncyCardsFeatures = () => {
       <div className="mb-8 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end md:px-8">
         <h2 className="max-w-lg text-4xl font-bold md:text-5xl">
           Experience the future with
-          <span className="text-blue-600"> Forá</span>
+          <span className="text-red-600"> Forá</span>
         </h2>
       </div>
 
@@ -19,7 +19,7 @@ export const BouncyCardsFeatures = () => {
           <CardContent
             bgFrom="from-violet-400"
             bgTo="to-indigo-400"
-            text="Send messages to the future — they’ll unlock when the time is right."
+            text="Send messages to the future they’ll unlock when the time is right."
           />
         </BounceCard>
 
@@ -51,7 +51,7 @@ export const BouncyCardsFeatures = () => {
           <CardContent
             bgFrom="from-pink-400"
             bgTo="to-red-400"
-            text="Military-grade encryption keeps every word between you and time."
+            text="Our End-to-end encryption keeps every word between you and time."
           />
         </BounceCard>
       </div>

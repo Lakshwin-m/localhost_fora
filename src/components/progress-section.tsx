@@ -204,7 +204,7 @@ const MessageBubble = ({
             <div className="flex items-center gap-2 mt-2 px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium w-fit ml-auto">
               <Sparkles className="w-3 h-3" />
               <span>
-                Delivered from {sender === "past" ? "2019" : "the future"}
+                Delivered from {sender === "past" ? "2025" : "the future"}
               </span>
             </div>
           )}
@@ -276,8 +276,8 @@ const TimeCapsule = ({ isActive }) => {
 
         {/* Date display */}
         <div className="absolute bottom-6 inset-x-0 text-center">
-          <div className="text-sm text-amber-900 font-bold">2030</div>
-          <div className="text-xs text-amber-800">Dec 25</div>
+          <div className="text-sm text-amber-900 font-bold">2026</div>
+          <div className="text-xs text-amber-800">Jan 1</div>
         </div>
 
         {/* Glow effect */}
@@ -418,8 +418,8 @@ export default function Component() {
 
           <div className="max-w-4xl mx-auto space-y-10 mb-20">
             <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-light">
-              Deliver messages through time — to your future self or to those
-              who matter most.
+              Deliver messages through time to your future self or to those who
+              matter most.
               <span className="text-red-600 font-semibold">
                 {" "}
                 Preserve meaning. Capture emotion. Send it when it matters most.
@@ -428,7 +428,7 @@ export default function Component() {
             <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
               From heartfelt encouragement and personal reflections to timeless
               celebrations, TimeCapsule ensures your words are delivered at just
-              the right moment — creating lasting impact from a single note.
+              the right moment creating lasting impact from a single note.
             </p>
           </div>
 
@@ -517,20 +517,23 @@ export default function Component() {
 
                 <div className="bg-gray-50 rounded-2xl p-5 mb-6 border border-gray-100">
                   <p className="text-gray-700 leading-relaxed font-medium">
-                    "Hey future me! Today I'm starting my dream company. I'm
-                    scared but excited. I hope by the time you read this, we've
-                    made it big! Remember why we started... 💫✨"
+                    Hey future me! Today, on this festival of lights, I’m taking
+                    the first step toward my dream company. I’m nervous but
+                    filled with hope and excitement. By the time you read this,
+                    I hope we’ve grown stronger and brighter than ever. Never
+                    forget why we started our passion, our vision, our light
+                    💫✨
                   </p>
                 </div>
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3 text-gray-600">
                     <Calendar className="w-5 h-5" />
-                    <span className="font-semibold">Christmas 2030</span>
+                    <span className="font-semibold">Diwali 2026</span>
                   </div>
                   <div className="flex items-center gap-2 bg-violet-100 text-violet-700 px-4 py-2 rounded-full text-sm font-bold">
                     <Lock className="w-4 h-4" />
-                    <span>Sealed</span>
+                    <span>Locked</span>
                   </div>
                 </div>
               </div>
@@ -554,13 +557,13 @@ export default function Component() {
 
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   Your message is now sealed and will be delivered on{" "}
-                  <strong>December 25, 2030</strong>
+                  <strong>Diwali 2026</strong>
                 </p>
 
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center gap-2 text-gray-500">
                     <Timer className="w-4 h-4" />
-                    <span>2,157 days remaining</span>
+                    <span>466 days remaining</span>
                   </div>
                   <div className="flex items-center gap-1 text-violet-600 font-medium">
                     <Zap className="w-4 h-4" />
@@ -641,15 +644,15 @@ export default function Component() {
                 <div className="space-y-6 max-h-80 overflow-hidden">
                   <MessageBubble
                     sender="past"
-                    message="Remember when you doubted yourself about starting your business? Look at where you are now! I'm so proud of us. 🌟"
+                    message="Hey… if you’re reading this, it means we finally did it. Forá is live. All those late nights, all the what-if's worth it.” ✨"
                     delay={isRightCardInView ? 1200 : 0}
                     isDelivered={true}
-                    timestamp="From Dec 25, 2019"
+                    timestamp="From Jul 30, 2025"
                   />
 
                   <MessageBubble
                     sender="future"
-                    message="Thank you past me... I really needed this reminder today. Your courage gave me everything I have now. ❤️"
+                    message="We forgot how far we’ve come. This was exactly what we needed."
                     delay={isRightCardInView ? 2200 : 0}
                     timestamp="Today, 3:42 PM"
                   />

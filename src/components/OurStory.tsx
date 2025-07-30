@@ -103,7 +103,7 @@ const OurStory = () => {
             >
               <div className="paragraph">
                 <p>
-                  We're seven friends —{" "}
+                  We're seven friends:{" "}
                   <span className="text-white font-bold name-highlight">
                     Lakshwin
                   </span>
@@ -131,7 +131,7 @@ const OurStory = () => {
                   <span className="text-white font-bold name-highlight">
                     Varnikka
                   </span>{" "}
-                  — who got tired of waiting for cool ideas to exist, so we
+                  who got tired of waiting for cool ideas to exist, so we
                   started building them ourselves.
                 </p>
               </div>
@@ -140,7 +140,7 @@ const OurStory = () => {
                 <p>
                   <span className="font-bold">Localhost</span> didn’t start in a
                   meeting room. It started in group chats, midnight calls, and
-                  chaotic Slack threads. No rules, no roadmaps — just a shared
+                  chaotic Slack threads. No rules, no roadmaps just a shared
                   drive to create without limits.
                 </p>
               </div>
@@ -148,7 +148,7 @@ const OurStory = () => {
               <div className="paragraph">
                 <p>
                   The spark that started it all is{" "}
-                  <span className="font-bold">Forá</span> — a time capsule
+                  <span className="font-bold">Forá</span> — The Time Capsule
                   messaging app inspired by one weird and wonderful question:{" "}
                   <span className="font-bold">
                     “What if you could talk to the future?”
@@ -158,7 +158,7 @@ const OurStory = () => {
 
               <div className="paragraph">
                 <p>
-                  That question ignited countless ideas, late-night debates, and
+                  That question ignited countless ideas, late night debates, and
                   coding marathons only close friends can pull off. From that
                   energy, something uniquely ours began to take shape.
                 </p>
@@ -167,7 +167,7 @@ const OurStory = () => {
               <div className="paragraph">
                 <p>
                   Today, <span className="font-bold">Localhost</span> is where
-                  curiosity meets craftsmanship — a creative playground and
+                  curiosity meets craftsmanship a creative playground and
                   innovation lab where we build with intention, experiment
                   boldly, and bring unexpected ideas to life. From innovative
                   apps to AI-powered tools, we’re always pushing the boundaries

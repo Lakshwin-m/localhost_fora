@@ -23,6 +23,35 @@ import { MarqueeEffect } from "@/components/marquee-effect";
 import progressSection from "@/components/progress-section";
 import Component from "@/components/progress-section";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+function Waitlist() {
+  const [formData, setFormData] = useState({ name: "", email: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const sendWaitlistEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_44v94x5",
+        "template_xe6suxc",
+        {
+          user_name: formData.name,
+          user_email: formData.email,
+        },
+        "_LD4exKDRkSUJ3qOh"
+      )
+      .then(() => {
+        setSubmitted(true);
+        setFormData({ name: "", email: "" });
+      })
+      .catch((err) => {
+        alert("Something went wrong!");
+        console.error(err);
+      });
+  };
+}
 const LandingPage = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [unlockedMessages, setUnlockedMessages] = useState([]);
@@ -43,11 +72,24 @@ const LandingPage = () => {
     setMobileMenuOpen(false); // Close mobile menu when navigating
   };
 
-  const handleWaitlistSubmit = (e) => {
-    e.preventDefault();
-    // Simulate form submission
-    setSubmitted(true);
-    setFormData({ name: "", email: "" });
+  const handleWaitlistSubmit = async () => {
+    if (!formData.name || !formData.email) return;
+
+    try {
+      const result = await emailjs.send(
+        "service_44v94x5",
+        "template_xe6suxc",
+        {
+          user_name: formData.name,
+          user_email: formData.email,
+        },
+        "_LD4exKDRkSUJ3qOh" // NOT secret key
+      );
+      console.log("Email sent successfully:", result.text);
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+    }
   };
 
   const features = [
@@ -223,7 +265,7 @@ const LandingPage = () => {
               <div>
                 <h1 className="text-5xl font-bold text-gray-900 mb-8 leading-tight">
                   Own{" "}
-                  <span className="bg-indigo-400 text-white px-4 py-2 rounded-lg inline-block">
+                  <span className="bg-red-600 text-white px-4 py-2 rounded-lg inline-block">
                     Every Moment
                   </span>
                   <br />
@@ -233,17 +275,17 @@ const LandingPage = () => {
 
               <div className="space-y-4 text-lg text-gray-600 max-w-xl">
                 <p>
-                  Get instant, time-controlled messaging the moment you need it.
-                  TimeLock has{" "}
-                  <span className="font-semibold text-gray-900">
-                    award-winning, 24/7 message scheduling
-                  </span>{" "}
-                  tailored to your timeline with smart unlocking and guidance.
+                  Unlock the power of time. With Forá, experience instant, time
+                  controlled messaging delivered precisely when it matters. Our
+                  advanced message scheduling system is always ready, designed
+                  around your timeline with smart unlocking and built in
+                  delivery guidance. Send with confidence. Schedule with
+                  precision.
                 </p>
                 <p>
                   Communicate confidently, with{" "}
                   <span className="font-semibold text-gray-900">
-                    the only time-messaging app you'll ever need.
+                    Forá - the Time Messaging app you'll ever need.
                   </span>
                 </p>
               </div>
@@ -272,7 +314,7 @@ const LandingPage = () => {
                             <Clock className="w-3 h-3 text-white" />
                           </div>
                           <span className="text-sm font-semibold text-gray-800">
-                            TimeLock Messages
+                            Forá Messages
                           </span>
                         </div>
                         <div className="flex space-x-1">
@@ -383,13 +425,13 @@ const LandingPage = () => {
 
                       {/* Chat Messages */}
                       <div className="space-y-3">
-                        <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-2xl rounded-tl-md text-xs font-medium shadow-sm max-w-[80%]">
-                          Hey Rebecca 👋
+                        <div className="bg-green-500 text-white p-3 rounded-2xl rounded-tl-md text-xs font-medium shadow-sm max-w-[80%]">
+                          Hey Rohan👋
                         </div>
-                        <div className="bg-white border border-gray-200 p-3 rounded-2xl rounded-tr-md text-xs text-gray-700 shadow-sm ml-auto max-w-[80%]">
+                        <div className="bg-slate-400 border p-3 rounded-2xl rounded-tr-md text-xs text-white shadow-sm ml-auto max-w-[80%]">
                           Ready for your surprise message?
                         </div>
-                        <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-2xl rounded-tl-md text-xs font-medium shadow-sm max-w-[80%]">
+                        <div className="bg-green-500 text-white p-3 rounded-2xl rounded-tl-md text-xs font-medium shadow-sm max-w-[80%]">
                           It's waiting for you! ✨
                         </div>
                       </div>
@@ -548,7 +590,7 @@ const LandingPage = () => {
                   You're on the list!
                 </h3>
                 <p className="mb-6 text-gray-600">
-                  We'll let you know when it's your turn to try TimeLock.
+                  We'll let you know when it's your turn to try Forá.
                 </p>
                 <button
                   onClick={() => {
