@@ -537,10 +537,27 @@ const LandingPage = () => {
             </h2>
 
             {/* Description */}
-            <p className="text-xl md:text-2xl text-slate-600 mb-14 max-w-3xl mx-auto leading-relaxed font-light">
-              Create meaningful connections across time.
-              <br />
-              Your future self is waiting.
+            {/* Description */}
+            <p className="text-xl md:text-2xl text-slate-700 mb-14 max-w-3xl mx-auto leading-relaxed font-light text-center tracking-wide">
+              <span className="block mb-3">
+                Create{" "}
+                <span className="font-semibold text-slate-900">
+                  meaningful connections
+                </span>{" "}
+                across time.
+              </span>
+              <span className="block mb-3 italic text-slate-600">
+                Your future self is waiting.
+              </span>
+              <span className="block mt-4 text-lg md:text-xl text-slate-600">
+                Join the waitlist to unlock{" "}
+                <span className="font-medium text-slate-900">early access</span>{" "}
+                and{" "}
+                <span className="font-medium text-slate-900">
+                  insider updates
+                </span>
+                , while becoming one of the first to experience the future.
+              </span>
             </p>
 
             {/* CTA Buttons */}
