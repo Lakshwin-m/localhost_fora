@@ -95,7 +95,7 @@ const AnimatedTooltip: React.FC = () => {
       },
       {
         id: 6,
-        name: "Dwaragesh",
+        name: "Dwaragesh C",
         image: "./Pictures/Untitled design (4) (1).png",
         description:
           "Dwaragesh C is a full Stack Developer with diverse interests and is a dedicated team manager. He fosters growth and upbrings the greatest of the team in a positive environment. He is a freelance video editor who brings life to media and an experienced designer.",
@@ -170,7 +170,14 @@ const AnimatedTooltip: React.FC = () => {
       return {
         className,
         style: {
-          marginLeft: index > 0 ? (window.innerWidth < 640 ? "-12px" : window.innerWidth < 768 ? "-16px" : "-20px") : "0",
+          marginLeft:
+            index > 0
+              ? window.innerWidth < 640
+                ? "-12px"
+                : window.innerWidth < 768
+                ? "-16px"
+                : "-20px"
+              : "0",
           zIndex: isSelected ? 50 : people.length - index,
         },
       };
@@ -184,7 +191,7 @@ const AnimatedTooltip: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 max-w-5xl px-2">
           <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-            Meet the Team
+            Meet theTeam
           </h1>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto font-light px-4">
             Meet the visionary leaders who drive innovation and shape the future

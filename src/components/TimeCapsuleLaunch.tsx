@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, Transition } from "framer-motion";
 import { Clock, ArrowRight, Sparkles, Star } from "lucide-react";
-
+import { event } from "@/lib/ga";
 // GlowEffect Component
 export type GlowEffectProps = {
   className?: string;
@@ -329,6 +329,11 @@ function TimeCapsuleLaunch({
   ],
 }: TimeCapsuleLaunchProps) {
   const handleCTAClick = () => {
+    // Track click in GA
+    event("cta_click", {
+      label: "landing_to_fora",
+    });
+
     // Navigate to /capsula
     if (typeof window !== "undefined") {
       window.location.href = "/fora";

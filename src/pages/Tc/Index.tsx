@@ -24,6 +24,18 @@ import progressSection from "@/components/progress-section";
 import Component from "@/components/progress-section";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { event } from "@/lib/ga";
+
+const handleScrollCTAClick = (label: string) => {
+  // Fire GA event
+  event("cta_click", { label });
+
+  // Scroll into view
+  document
+    .getElementById("cta-section")
+    ?.scrollIntoView({ behavior: "smooth" });
+};
+
 function Waitlist() {
   const [formData, setFormData] = useState({ name: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -34,13 +46,13 @@ function Waitlist() {
 
     emailjs
       .send(
-        "service_44v94x5",
-        "template_xe6suxc",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           user_name: formData.name,
           user_email: formData.email,
         },
-        "_LD4exKDRkSUJ3qOh"
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setSubmitted(true);
@@ -73,17 +85,18 @@ const LandingPage = () => {
   };
 
   const handleWaitlistSubmit = async () => {
+    event("waitlist_signup", { method: "popup_form" });
     if (!formData.name || !formData.email) return;
 
     try {
       const result = await emailjs.send(
-        "service_44v94x5",
-        "template_xe6suxc",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           user_name: formData.name,
           user_email: formData.email,
         },
-        "_LD4exKDRkSUJ3qOh" // NOT secret key
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
       console.log("Email sent successfully:", result.text);
       setSubmitted(true);
@@ -193,7 +206,10 @@ const LandingPage = () => {
                 <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-amber-400 to-orange-500 group-hover:w-full transition-all duration-300"></div>
               </button>
               <button
-                onClick={() => scrollToSection("waitlist")}
+                onClick={() => {
+                  event("cta_click", { label: "fora_cta_nav" });
+                  scrollToSection("waitlist");
+                }}
                 className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-slate-900/25 transition-all duration-300 overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -246,7 +262,10 @@ const LandingPage = () => {
                   Get Started
                 </button>
                 <button
-                  onClick={() => scrollToSection("")}
+                  onClick={() => {
+                    event("cta_click", { label: "fora_cta_mobile_nav" });
+                    scrollToSection("waitlist");
+                  }}
                   className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-semibold px-6 py-3 rounded-full hover:shadow-lg hover:shadow-slate-900/25 transition-all duration-300 w-fit overflow-hidden group mt-2"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -292,7 +311,10 @@ const LandingPage = () => {
 
               <div className="space-y-4">
                 <button
-                  onClick={() => scrollToSection("waitlist")}
+                  onClick={() => {
+                    event("cta_click", { label: "fora_cta_Hero" });
+                    scrollToSection("waitlist");
+                  }}
                   className="bg-black text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-gray-800 transition-colors"
                 >
                   Join Waitlist

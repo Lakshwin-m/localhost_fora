@@ -9,18 +9,23 @@ import CapsulaLandingPage from "@/pages/Tc/Index";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import { useEffect } from "react";
+import { pageview } from "./lib/ga";
 function TitleManager() {
   const location = useLocation();
 
   useEffect(() => {
     const path = location.pathname.toLowerCase();
 
+    // Update document title
     if (path.startsWith("/fora")) {
-      document.title = "Forá:The Time Capsule";
+      document.title = "Forá: The Time Capsule";
     } else {
       document.title = "localhost";
     }
-  }, [location.pathname]);
+
+    // Send GA pageview
+    pageview(location.pathname + location.search);
+  }, [location.pathname, location.search]);
 
   return null;
 }
