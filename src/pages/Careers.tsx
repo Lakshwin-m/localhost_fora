@@ -108,7 +108,7 @@ const Careers = () => {
         1. Nature of Organization
       </h4>
       <p>
-        The Applicant acknowledges that this opportunity is offered by an early-stage, currently unregistered company operating under the name ./localhost. The company is in the process of formal registration, expected to be completed within the next month.
+        The applicant acknowledges that this opportunity is offered by an early-stage, currently unregistered company operating under the name ./localhost. The company is in the process of formal registration, expected to be completed within the next month.
       </p>
     </div>
 
@@ -117,7 +117,7 @@ const Careers = () => {
         2. Confidential Information
       </h4>
       <p>
-        The Applicant acknowledges that during the application and interview process, they may be exposed to proprietary information, business strategies, technical designs, product concepts, and other trade secrets related to Forá and associated projects.
+        The applicant acknowledges that during the application and interview process, they may be exposed to proprietary information, business strategies, technical designs, product concepts, and other trade secrets related to Forá and associated projects.
       </p>
     </div>
 
@@ -135,7 +135,9 @@ const Careers = () => {
         4. Sole Purpose
       </h4>
       <p>
-        We ensure that any information collected during the application process is used solely for evaluation purposes and not for personal gain, commercial use, or any other external purpose
+       We ensure that any information collected during the application process is used solely for evaluation purposes and not for personal gain, commercial use, or any other external purpose
+      </p>
+    </div>
 
     <div>
       <h4 className="text-neutral-200 font-medium mb-2 uppercase text-xs tracking-widest">
