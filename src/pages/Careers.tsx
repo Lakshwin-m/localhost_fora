@@ -135,16 +135,14 @@ const Careers = () => {
         4. Sole Purpose
       </h4>
       <p>
-        Confidential information shall be used exclusively for the purpose of evaluation and participation in the application process, and not for personal benefit, commercial use, or any external purpose.
-      </p>
-    </div>
+        We ensure that any information collected during the application process is used solely for evaluation purposes and not for personal gain, commercial use, or any other external purpose
 
     <div>
       <h4 className="text-neutral-200 font-medium mb-2 uppercase text-xs tracking-widest">
         5. Non-Disclosure of Materials
       </h4>
       <p>
-        The Applicant agrees not to publicly share, publish, or discuss any materials, ideas, or internal details related to the company or its products on social media, portfolios, or any public platform until explicitly permitted.
+        The applicant agrees not to publicly share, publish, or discuss any materials, ideas, or internal details related to the company or its products on social media, portfolios, or any public platform until explicitly permitted.
       </p>
     </div>
 
