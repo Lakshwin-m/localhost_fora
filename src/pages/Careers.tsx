@@ -135,7 +135,7 @@ const Careers = () => {
         4. Sole Purpose
       </h4>
       <p>
-       We ensure that any information collected during the application process is used solely for evaluation purposes and not for personal gain, commercial use, or any other external purpose
+       We ensure that any information collected during the application process is used solely for evaluation purposes and not for personal gain, commercial use, or any other external purpose.
       </p>
     </div>
 
