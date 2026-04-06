@@ -10,6 +10,7 @@ import {
 } from "framer-motion";
 import { useState, useEffect } from "react";
 import React, { useRef } from "react";
+import { ChevronDown } from "lucide-react";
 import Silk from "./silk";
 import { Typewriter } from "./typewriter";
 
@@ -29,6 +30,19 @@ const Section1: React.FC<SectionProps> = ({ scrollYProgress }) => {
       <h1 className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl px-6 text-center tracking-tight leading-tight z-10">
         <span className="text-purple-600">Hi,</span>
       </h1>
+
+      <motion.div
+        className="absolute bottom-12 flex flex-col items-center justify-center text-gray-500 gap-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ 
+          opacity: { delay: 1, duration: 1 },
+          y: { repeat: Infinity, duration: 2, ease: "easeInOut" }
+        }}
+      >
+        <span className="text-xs tracking-[0.2em] uppercase font-medium">Scroll Down</span>
+        <ChevronDown className="w-5 h-5" />
+      </motion.div>
     </motion.section>
   );
 };
@@ -64,7 +78,7 @@ const Section2: React.FC<SectionProps> = ({ scrollYProgress }) => {
           We Are:
         </h2>
         {showTypewriter && (
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white font-mono">
             <Typewriter text="./localhost" cursorChar="_" speed={100} />
           </h1>
         )}

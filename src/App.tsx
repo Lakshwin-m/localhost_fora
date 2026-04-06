@@ -8,6 +8,7 @@ import HomePage from "@/components/LocalHost";
 import CapsulaLandingPage from "@/pages/Tc/Index";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Careers from "./pages/Careers";
 import { useEffect } from "react";
 import { pageview } from "./lib/ga";
 function TitleManager() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/fora" element={<CapsulaLandingPage />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/terms-and-conditions" element={<Terms />} />
+          <Route path="/careers" element={<Careers />} />
           {/* Add more routes as needed */}
         </Routes>
       </Router>

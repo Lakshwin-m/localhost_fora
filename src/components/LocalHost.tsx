@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Users, Rocket, Code, Lightbulb } from "lucide-react";
+import { trackEvent } from "@/lib/ga";
 import MeetTheTeam from "@/components/MeetTheTeam";
 import Heroscrollanimation from "./ui/hero-scroll-animation";
 import { StackingCard } from "@/components/ui/stacking-card";
@@ -72,6 +73,32 @@ const HomePage = () => {
         <section className="">
           <MeetTheTeam />
         </section>
+
+        {/* Careers CTA - Clean, Minimal */}
+        <section className="max-w-6xl mx-auto py-32 px-4 sm:px-6">
+          <div className="border-t border-b border-neutral-800 py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-light tracking-tighter text-white mb-6 leading-none">
+                Join the Team.
+              </h2>
+              <p className="text-neutral-400 text-lg font-light leading-relaxed max-w-xl">
+                We are always looking for exceptional talent. If you have an uncompromising standard for craft, we want to hear from you.
+              </p>
+            </div>
+            
+            <Link 
+              to="/careers" 
+              onClick={() => trackEvent("join_team_cta_click", { location: "homepage" })}
+              className="flex-shrink-0 group inline-flex items-center justify-center gap-4 bg-white text-black px-10 py-5 text-xs font-medium uppercase tracking-widest hover:bg-neutral-200 transition-colors"
+            >
+              View Openings
+              <svg className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        </section>
+
         <section className="text-white ">
           <Footerdemo />
         </section>

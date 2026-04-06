@@ -16,7 +16,7 @@ export const pageview = (path: string) => {
   });
 };
 
-export const event = (action: string, params?: Record<string, any>) => {
+export const trackEvent = (action: string, params?: Record<string, any>) => {
   if (!window.gtag || !GA_ID) return;
   window.gtag("event", action, params);
 };

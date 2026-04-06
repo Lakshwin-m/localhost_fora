@@ -14,7 +14,6 @@ interface Person {
 
 const AnimatedTooltip: React.FC = () => {
   const [hoveredPerson, setHoveredPerson] = useState<Person | null>(null);
-  const [selectedPerson, setSelectedPerson] = useState<Person | null>(null);
 
   // Memoize people data to prevent recreation on every render
   const people: Person[] = useMemo(
@@ -25,7 +24,7 @@ const AnimatedTooltip: React.FC = () => {
         image: "./Pictures/Untitled design (1).png",
         description:
           "Lakshwin is an emerging AI/ML developer and the founder of localhost, with hands-on experience in building intelligent, user-focused applications. Proficient in Python, JavaScript, React, Flask, and SQL, he has developed projects ranging from a power grid fault-detection chatbot using NLP to a sentiment analysis tool powered by spaCy and NLTK. He is also leading the creation of Forá, a time capsule messaging app that blends emotional storytelling with modern web technologies. Comfortable working with platforms like GitHub, Jupyter, VS Code, and Colab, he brings together strong technical skills and creative thinking. With a growing interest in LLM fine-tuning and a certification in relational databases, Lakshwin consistently seeks innovative ways to apply machine learning in real-world scenarios.",
-        role: "Founder | Full-Stack Developer | AI Engineer",
+        role: "Founder | CTO",
         linkedin: "https://www.linkedin.com/in/lakshwinkrishna/",
         Acheivements: [
           "Built an intelligent chatbot for solar inverter fault detection and power loss analysis using natural language processing techniques.",
@@ -40,7 +39,7 @@ const AnimatedTooltip: React.FC = () => {
         image: "./Pictures/Untitled design.png",
         description:
           "A Rohan is a technically skilled individual with a strong foundation in Python, SQL, HTML, JavaScript, and Java. He is experienced in tools such as PyCharm, Visual Studio Code, Jupyter Notebooks, and GitHub. Known for strong leadership, app development and front-end development expertise, and active contribution to technical communities. Adept at organizing workshops, managing teams, and delivering real-world tech solutions through effective collaboration and innovation.",
-        role: "Co-Founder | Mobile App Developer | UI/UX Designer",
+        role: "Co-Founder | CEO",
         linkedin: "https://www.linkedin.com/in/rohan-a/",
         Acheivements: [
           "Served as House Captain and Junior Captain at Sir Mutha School; led the 'Sapphire' house to win the discipline cup in 2022.",
@@ -55,7 +54,7 @@ const AnimatedTooltip: React.FC = () => {
         image: "./Pictures/Untitled design (3).png",
         description:
           "S V Vishal is an aspiring psychologist with a focus on research, clinical, and organizational psychology. He is currently exploring lesser-known areas of the field through independent research. He serves as the Head of R&D and Innovation at localhost, leading studies on emerging psychological trends and behavioral insights. Interested in the intersection of mental health, workplace dynamics, and societal behavior. Driven by a commitment to make psychological knowledge more accessible and impactful.",
-        role: "Co-Founder | Head of R&D and Innovation",
+        role: "Co-Founder | Head of R&D and Finance",
         linkedin: "https://www.linkedin.com/in/david-kim/",
         Acheivements: [
           "Served as the Head of Finance for college cultural events.",
@@ -128,39 +127,24 @@ const AnimatedTooltip: React.FC = () => {
   // Memoized event handlers to prevent recreation
   const handleMouseEnter = useCallback(
     (person: Person) => {
-      if (!selectedPerson) {
-        setHoveredPerson(person);
-      }
+      setHoveredPerson(person);
     },
-    [selectedPerson]
+    []
   );
 
   const handleMouseLeave = useCallback(() => {
     setHoveredPerson(null);
   }, []);
 
-  const handlePersonClick = useCallback((person: Person) => {
-    setSelectedPerson(person);
-    setHoveredPerson(null);
-  }, []);
-
-  const handleClosePanel = useCallback(() => {
-    setSelectedPerson(null);
-  }, []);
-
   // Memoized avatar styles to prevent recalculation
   const getAvatarStyles = useCallback(
     (person: Person, index: number) => {
-      const isSelected = selectedPerson?.id === person.id;
       const isHovered = hoveredPerson?.id === person.id;
 
       let className =
         "w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full overflow-hidden border-2 sm:border-4 border-white shadow-xl transition-all duration-200 ease-out relative ";
 
-      if (isSelected) {
-        className +=
-          "scale-110 sm:scale-125 ring-2 sm:ring-4 ring-blue-400/50 ring-offset-2 sm:ring-offset-4 ring-offset-gray-900";
-      } else if (isHovered) {
+      if (isHovered) {
         className +=
           "scale-105 sm:scale-110 ring-1 sm:ring-2 ring-white/30 ring-offset-1 sm:ring-offset-2 ring-offset-gray-900";
       } else {
@@ -178,11 +162,11 @@ const AnimatedTooltip: React.FC = () => {
                 ? "-16px"
                 : "-20px"
               : "0",
-          zIndex: isSelected ? 50 : people.length - index,
+          zIndex: isHovered ? 50 : people.length - index,
         },
       };
     },
-    [selectedPerson, hoveredPerson, people.length]
+    [hoveredPerson, people.length]
   );
 
   return (
@@ -206,16 +190,15 @@ const AnimatedTooltip: React.FC = () => {
               const avatarStyles = getAvatarStyles(person, index);
 
               return (
-                <div
-                  key={person.id}
-                  className="relative group cursor-pointer flex-shrink-0"
-                  onMouseEnter={() => handleMouseEnter(person)}
-                  onMouseLeave={handleMouseLeave}
-                  onClick={() => handlePersonClick(person)}
-                  style={avatarStyles.style}
-                >
+                  <div
+                    key={person.id}
+                    className="relative group cursor-pointer flex-shrink-0"
+                    onMouseEnter={() => handleMouseEnter(person)}
+                    onMouseLeave={handleMouseLeave}
+                    style={avatarStyles.style}
+                  >
                   {/* Optimized tooltip - responsive positioning */}
-                  {hoveredPerson?.id === person.id && !selectedPerson && (
+                  {hoveredPerson?.id === person.id && (
                     <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-4 sm:mb-6 md:mb-8 z-50 opacity-0 animate-fade-in pointer-events-none">
                       <div className="bg-white/95 backdrop-blur-sm border border-gray-300 text-black px-3 py-2 sm:px-4 sm:py-3 rounded-lg shadow-lg min-w-[180px] sm:min-w-[220px] max-w-[280px] sm:max-w-[320px]">
                         <div className="font-medium text-xs sm:text-sm md:text-base mb-1">
@@ -247,104 +230,6 @@ const AnimatedTooltip: React.FC = () => {
           </div>
         </div>
 
-        {/* Selected Profile Panel - Fully responsive */}
-        {selectedPerson && (
-          <div className="max-w-4xl w-full opacity-0 animate-fade-in-up px-2 sm:px-4">
-            <div className="bg-white/95 backdrop-blur-sm rounded-xl border border-gray-200 shadow-xl overflow-hidden">
-              {/* Header */}
-              <div className="relative bg-gradient-to-r from-gray-900 to-gray-800 px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6">
-                <button
-                  onClick={handleClosePanel}
-                  className="absolute top-3 right-3 sm:top-4 sm:right-4 text-gray-400 hover:text-white transition-colors duration-150 p-1.5 sm:p-2 rounded-full hover:bg-gray-700/50"
-                  aria-label="Close profile panel"
-                >
-                  <svg
-                    className="w-4 h-4 sm:w-5 sm:h-5"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-
-                <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 text-center sm:text-left">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden ring-2 ring-gray-600 shadow-lg flex-shrink-0">
-                    <img
-                      src={selectedPerson.image}
-                      alt={selectedPerson.name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-light mb-1 sm:mb-2 tracking-tight text-white break-words">
-                      {selectedPerson.name}
-                    </h2>
-                    <p className="text-yellow-400 text-sm sm:text-base md:text-lg font-medium tracking-wide break-words">
-                      {selectedPerson.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-4 sm:p-6 md:p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-                  <div className="order-1">
-                    <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 flex items-center">
-                      <div className="w-3 h-0.5 bg-blue-500 mr-2" />
-                      Executive Summary
-                    </h3>
-                    <p className="text-gray-800 leading-relaxed text-sm md:text-base mb-6">
-                      {selectedPerson.description}
-                    </p>
-                  </div>
-
-                  <div className="order-2">
-                    <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 flex items-center">
-                      <div className="w-3 h-0.5 bg-green-500 mr-2" />
-                      Key Achievements
-                    </h3>
-                    <div className="space-y-2 mb-6">
-                      {selectedPerson.Acheivements.filter(Boolean).map(
-                        (achievement, index) => (
-                          <div
-                            key={index}
-                            className="flex items-start space-x-3"
-                          >
-                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0" />
-                            <p className="text-gray-700 text-sm leading-snug break-words">
-                              {achievement}
-                            </p>
-                          </div>
-                        )
-                      )}
-                    </div>
-
-                    {selectedPerson.email && (
-                      <>
-                        <h3 className="text-xs font-semibold text-gray-600 uppercase tracking-wider mb-3 flex items-center">
-                          <div className="w-3 h-0.5 bg-yellow-500 mr-2" />
-                          Contact Information
-                        </h3>
-                        <p className="text-gray-800 text-sm md:text-base break-all">
-                          {selectedPerson.email}
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
       <style jsx>{`

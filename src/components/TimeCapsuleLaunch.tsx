@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, Transition } from "framer-motion";
 import { Clock, ArrowRight, Sparkles, Star } from "lucide-react";
-import { event } from "@/lib/ga";
+import { trackEvent } from "@/lib/ga";
 // GlowEffect Component
 export type GlowEffectProps = {
   className?: string;
@@ -330,7 +330,7 @@ function TimeCapsuleLaunch({
 }: TimeCapsuleLaunchProps) {
   const handleCTAClick = () => {
     // Track click in GA
-    event("cta_click", {
+    trackEvent("cta_click", {
       label: "landing_to_fora",
     });
 
@@ -354,6 +354,20 @@ function TimeCapsuleLaunch({
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white uppercase mb-4">
             And We Are Launching..
           </h2>
+          <motion.div
+            className="flex justify-center -mt-6 relative z-50 pointer-events-auto"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <a 
+              href="/careers" 
+              onClick={() => trackEvent("join_team_cta_click", { location: "launch_section" })}
+              className="inline-flex items-center justify-center bg-white text-black px-10 py-4 text-xs font-medium uppercase tracking-widest hover:bg-neutral-200 transition-colors"
+            >
+              Join The Team
+            </a>
+          </motion.div>
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -440,10 +454,10 @@ function TimeCapsuleLaunch({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 2.2 }}
-            className="flex items-center justify-center gap-4 text-gray-500 text-sm mt-16 tracking-[0.2em] uppercase"
+            className="flex items-center justify-center gap-4 text-gray-500 text-xs mt-16 tracking-[0.2em] uppercase"
           >
             <motion.div
-              className="w-3 h-3 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg shadow-green-500/50"
+              className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full shadow-lg shadow-green-500/50"
               animate={{
                 scale: [1, 1.4, 1],
                 opacity: [1, 0.6, 1],

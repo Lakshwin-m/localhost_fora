@@ -24,11 +24,11 @@ import progressSection from "@/components/progress-section";
 import Component from "@/components/progress-section";
 import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
-import { event } from "@/lib/ga";
+import { trackEvent } from "@/lib/ga";
 
 const handleScrollCTAClick = (label: string) => {
   // Fire GA event
-  event("cta_click", { label });
+  trackEvent("cta_click", { label });
 
   // Scroll into view
   document
@@ -85,7 +85,7 @@ const LandingPage = () => {
   };
 
   const handleWaitlistSubmit = async () => {
-    event("waitlist_signup", { method: "popup_form" });
+    trackEvent("waitlist_signup", { method: "popup_form" });
     if (!formData.name || !formData.email) return;
 
     try {
@@ -207,7 +207,7 @@ const LandingPage = () => {
               </button>
               <button
                 onClick={() => {
-                  event("cta_click", { label: "fora_cta_nav" });
+                  trackEvent("cta_click", { label: "fora_cta_nav" });
                   scrollToSection("waitlist");
                 }}
                 className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-semibold px-6 py-2.5 rounded-full hover:shadow-lg hover:shadow-slate-900/25 transition-all duration-300 overflow-hidden group"
@@ -263,7 +263,7 @@ const LandingPage = () => {
                 </button>
                 <button
                   onClick={() => {
-                    event("cta_click", { label: "fora_cta_mobile_nav" });
+                    trackEvent("cta_click", { label: "fora_cta_mobile_nav" });
                     scrollToSection("waitlist");
                   }}
                   className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-semibold px-6 py-3 rounded-full hover:shadow-lg hover:shadow-slate-900/25 transition-all duration-300 w-fit overflow-hidden group mt-2"
@@ -312,7 +312,7 @@ const LandingPage = () => {
               <div className="space-y-4">
                 <button
                   onClick={() => {
-                    event("cta_click", { label: "fora_cta_Hero" });
+                    trackEvent("cta_click", { label: "fora_cta_Hero" });
                     scrollToSection("waitlist");
                   }}
                   className="bg-black text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-gray-800 transition-colors"
