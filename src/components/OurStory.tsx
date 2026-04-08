@@ -121,16 +121,14 @@ const OurStory = () => {
                   </span>
                   ,{" "}
                   <span className="text-white font-bold name-highlight">
-                    Prathik
-                  </span>
-                  ,{" "}
-                  <span className="text-white font-bold name-highlight">
-                    Dwaragesh
-                  </span>
-                  , and{" "}
-                  <span className="text-white font-bold name-highlight">
                     Varnikka
                   </span>{" "}
+                  and
+                  {" "}
+                   <span className="text-white font-bold name-highlight">
+                    Dwaragesh
+                  </span>
+                  
                   who got tired of waiting for cool ideas to exist, so we
                   started building them ourselves.
                 </p>
@@ -138,7 +136,7 @@ const OurStory = () => {
 
               <div className="paragraph">
                 <p>
-                  <span className="font-bold">Localhost</span> didn’t start in a
+                  <span className="font-bold">./localhost</span> didn’t start in a
                   meeting room. It started in group chats, midnight calls, and
                   chaotic Slack threads. No rules, no roadmaps just a shared
                   drive to create without limits.
@@ -166,7 +164,7 @@ const OurStory = () => {
 
               <div className="paragraph">
                 <p>
-                  Today, <span className="font-bold">Localhost</span> is where
+                  Today, <span className="font-bold">./localhost</span> is where
                   curiosity meets craftsmanship a creative playground and
                   innovation lab where we build with intention, experiment
                   boldly, and bring unexpected ideas to life. From innovative

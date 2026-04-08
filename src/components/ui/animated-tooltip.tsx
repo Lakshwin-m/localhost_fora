@@ -79,18 +79,17 @@ const AnimatedTooltip: React.FC = () => {
       },
       {
         id: 5,
-        name: "Prathik E",
-        image: "./Pictures/IMG_0515 (2).png",
+        name: "Varnikka T M",
+        image: "./Pictures/IMG_0639.png",
         description:
-          "Prathik E is an ambitious and detail-oriented undergraduate student currently pursuing his degree in Computer Science, with a strong passion for technology and innovation. Alongside his academic journey, he actively contribute as both a Q/A Tester and an AI/ML Engineer, where his roles are vital in ensuring software quality and developing intelligent, data-driven solutions. His dual expertise allows him to bridge the gap between precision testing and smart automation, making him a valuable asset in building reliable and forward-thinking tech products.",
-        role: "Head of Quality Assurance",
-        linkedin: "https://www.linkedin.com/in/emily-rodriguez/",
+          "Varnikka T M  is a third-year undergraduate student pursuing a Bachelor of Engineering in Computer Science at BITS Pilani, Dubai Campus. She has a strong interest in digital marketing, content development, and IT-enabled communication strategies. As the current Vice President of SHADES, the university's official art and design club, she leads strategic planning, event coordination, and branding initiatives for campus-wide creative events.Varnikka has interned at IDP Education UAE and Constellation, where she contributed to digital campaigns, video content strategy, and technical data projects. At IDP, she worked with the marketing and IT team to develop a structured YouTube content series and evaluate editing tools. At Constellation, she completed a technical internship focused on data analysis and project work using Jupyter Notebook.",
+        role: "Head of Marketing",
+        linkedin: "https://www.linkedin.com/in/alex-thompson/",
         Acheivements: [
-          "Designed user-friendly interfaces for Chrono and Capsula",
-          "Conducted user research to inform design decisions",
-          "Created design systems to ensure consistency across products",
+          "Serving as Vice President of SHADES (2024–2025), overseeing university-wide events such as Artex ",
+          "Responsible for strategic planning, budgeting, team coordination, and promotional activities across digital platforms.",
         ],
-        email: "prathike693@gmail.com",
+        email: "varnikkatm@gmail.com",
       },
       {
         id: 6,
@@ -106,20 +105,7 @@ const AnimatedTooltip: React.FC = () => {
         ],
         email: "dwarageshc7203@gmail.com",
       },
-      {
-        id: 7,
-        name: "Varnikka T M",
-        image: "./Pictures/IMG_0639.png",
-        description:
-          "Varnikka T M  is a third-year undergraduate student pursuing a Bachelor of Engineering in Computer Science at BITS Pilani, Dubai Campus. She has a strong interest in digital marketing, content development, and IT-enabled communication strategies. As the current Vice President of SHADES, the university's official art and design club, she leads strategic planning, event coordination, and branding initiatives for campus-wide creative events.Varnikka has interned at IDP Education UAE and Constellation, where she contributed to digital campaigns, video content strategy, and technical data projects. At IDP, she worked with the marketing and IT team to develop a structured YouTube content series and evaluate editing tools. At Constellation, she completed a technical internship focused on data analysis and project work using Jupyter Notebook.",
-        role: "Head of Marketing",
-        linkedin: "https://www.linkedin.com/in/alex-thompson/",
-        Acheivements: [
-          "Serving as Vice President of SHADES (2024–2025), overseeing university-wide events such as Artex ",
-          "Responsible for strategic planning, budgeting, team coordination, and promotional activities across digital platforms.",
-        ],
-        email: "varnikkatm@gmail.com",
-      },
+      
     ],
     []
   );
